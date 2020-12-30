@@ -1,9 +1,8 @@
 //
 //  WeatherManager.swift
-//  Weather App
+//  WeatherApp
 //
-//  Created by Shantanu Tiwari on 22/12/2020.
-//  Copyright © 2020 Shantanu Tiwari. All rights reserved.
+//  Created by Shantanu on 30/12/20.
 //
 import Foundation
 
@@ -38,7 +37,7 @@ struct WeatherManager {
                     if let weather = self.parseJSON(weatherData: safeData) {
 //                        let weatherVC = WeatherViewController()
 //                        weatherVC.didUpdateWeather(weather: weather)
-                        delegate?.didUpdateWeather(weather: weather)
+//                        delegate?.didUpdateWeather(weather: weather)
                     }
                 }
             }
@@ -55,9 +54,11 @@ struct WeatherManager {
 // WeatherData.self -> indicates Type
 // weatherData -> indicates Object
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-//            print(decodedData.main.temp)
-//            print(decodedData.weather[0].description)
-//            print(decodedData.weather[0].id)
+//           
+            print(decodedData.main.temp)
+            print(decodedData.weather[0].description)
+            print(decodedData.weather[0].id)
+            
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name

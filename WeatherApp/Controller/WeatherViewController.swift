@@ -1,9 +1,8 @@
 //
 //  ViewController.swift
-//  Weather App
+//  WeatherApp
 //
-//  Created by Shantanu Tiwari on 22/12/2020.
-//  Copyright © 2020 Shantanu Tiwari. All rights reserved.
+//  Created by Shantanu on 30/12/20.
 //
 
 import UIKit
@@ -70,6 +69,4 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         print(weather.temperature)
     }
 }
-
-
 
