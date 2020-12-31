@@ -37,9 +37,9 @@ class WeatherViewController: UIViewController {
         searchTextField.delegate = self
     }
     // Reset Location Button Pressed .
-//    @IBAction func locationPressed(_ sender: UIButton) {
-//        locationManager.requestLocation()    // to get the current location of user.
-//    }
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()    // to get the current location of user.
+    }
     
 }
 
@@ -108,7 +108,7 @@ extension WeatherViewController : CLLocationManagerDelegate {
 //        print("Got a Location Data")
 //        locations.last is an optional so we have to optionally bind it .
         if let location = locations.last {
-//            locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             weatherManager.fetchWeather(latitude: lat, longitude: lon)
