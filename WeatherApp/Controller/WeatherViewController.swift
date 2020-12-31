@@ -112,8 +112,8 @@ extension WeatherViewController : CLLocationManagerDelegate {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             weatherManager.fetchWeather(latitude: lat, longitude: lon)
-            print(lat)
-            print(lon)
+//            print(lat)
+//            print(lon)
         }
         
     }
