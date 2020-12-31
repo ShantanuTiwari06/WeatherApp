@@ -17,7 +17,7 @@ struct WeatherManager {
     
     var delegate: WeatherManagerDelegate?
     
-//    MARK:- Fetch Weather
+//    MARK:- FetchWeather()
     func fetchWeather(cityName: String) {
 //cityName <- city <- searchTextField.text .
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -30,7 +30,7 @@ struct WeatherManager {
         performRequest(with: urlString)
     }
     
-    //    MARK:- Perform Request
+    //    MARK:- PerformRequest()
 //  func performRequest(urlString : String)
     func performRequest(with urlString : String) {
 // 1. Create URL
@@ -41,7 +41,7 @@ struct WeatherManager {
             
 //let task = session.dataTask(with: url, completionHandler: handle(data:response:error:))
             
-//            MARK:- Handle Fn as a Closure
+//            MARK:- Handle() as a Closure
 //            MARK:- Completion Handler
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -65,7 +65,7 @@ struct WeatherManager {
         }
     }
     
-//    MARK:- ParseJSON
+//    MARK:- ParseJSON()
     func parseJSON(_ weatherData: Data) -> WeatherModel?  {
 // JSONDecoder is an object that can decode JSON we r going to just initialize it
         let decoder = JSONDecoder()
@@ -93,9 +93,7 @@ struct WeatherManager {
             return nil
         }
     }
-    
-
-// Closure Fn . -
+    //MARK:- Handle() as Closure .
 //    func handle(data: Data?, response: URLResponse?, error: Error?) {
 //        if error != nil {
 //            print(error!)
@@ -107,5 +105,4 @@ struct WeatherManager {
 //            print(dataString)
 //        }
 //    }
-    
 }

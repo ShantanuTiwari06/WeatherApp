@@ -20,7 +20,7 @@ class WeatherViewController: UIViewController {
     var weatherManager = WeatherManager()
     // For user current location .
     let locationManager = CLLocationManager()
-//MARK:- ViewDidLoad
+//MARK:- ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         // This is V-Imp .
@@ -36,14 +36,14 @@ class WeatherViewController: UIViewController {
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
-    //MARK:- Reset Location Button.
+    //MARK:- BTN-ResetLocation
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()    // to get the current location of user.
     }
     
 }
 
-//MARK:- UITextFieldDelegate
+//MARK:- Ex-UITextFieldDelegate
 extension WeatherViewController : UITextFieldDelegate {
     
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -87,7 +87,7 @@ extension WeatherViewController : UITextFieldDelegate {
         searchTextField.text = ""
     }
 }
-//MARK:- WeatherManagerDelegate
+//MARK:- Ex-WeatherManagerDelegate
 extension WeatherViewController : WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager,weather: WeatherModel) {
         DispatchQueue.main.async {
@@ -102,7 +102,7 @@ extension WeatherViewController : WeatherManagerDelegate {
         print(error)
     }
 }
-//MARK:- CLLocationManagerDelegate
+//MARK:- Ex-CLLocationManagerDelegate
 extension WeatherViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        print("Got a Location Data")
