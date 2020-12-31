@@ -36,7 +36,7 @@ class WeatherViewController: UIViewController {
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
-    // Reset Location Button Pressed .
+    //MARK:- Reset Location Button.
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()    // to get the current location of user.
     }
